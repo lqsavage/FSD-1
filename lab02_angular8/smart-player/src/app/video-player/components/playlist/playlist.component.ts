@@ -1,15 +1,10 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Course } from 'src/app/core/models';
 
-export interface Course {
-  id: number;
-  title: string;
-  url: string;
-  duration: string;
-}
 @Component({
   selector: 'app-playlist',
   templateUrl: './playlist.component.html',
-  styleUrls: ['./playlist.component.scss']
+  styleUrls: ['./playlist.component.scss'],
 })
 export class PlaylistComponent implements OnInit {
   constructor() {}

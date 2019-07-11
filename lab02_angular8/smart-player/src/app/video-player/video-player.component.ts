@@ -1,9 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
-import { Course } from '..';
-import { PlayerComponent } from './player';
-import { ControlsComponent } from './controls';
-import { HttpClient } from '@angular/common/http';
-import { environment } from 'src/environments/environment';
+import { PlayerComponent } from './components/player';
+import { ControlsComponent } from './components/controls';
+import { CourseService } from 'src/app/core/services';
+import { Course } from 'src/app/core/models';
 
 const VOTE_UP = 'up';
 const VOTE_DOWN = 'down';
@@ -11,11 +10,13 @@ const VOTE_DOWN = 'down';
 @Component({
   selector: 'app-video-player',
   templateUrl: './video-player.component.html',
-  styleUrls: ['./video-player.component.css']
+  styleUrls: ['./video-player.component.css'],
 })
 export class VideoPlayerComponent implements OnInit {
-  @ViewChild(PlayerComponent, { static: true }) playerComponent: PlayerComponent;
-  @ViewChild(ControlsComponent, { static: true }) controlsComponent: ControlsComponent;
+  @ViewChild(PlayerComponent, { static: true })
+  playerComponent: PlayerComponent;
+  @ViewChild(ControlsComponent, { static: true })
+  controlsComponent: ControlsComponent;
 
   currentCourse: Course;
   courses: Course[] = [];
@@ -24,10 +25,10 @@ export class VideoPlayerComponent implements OnInit {
   unlikes = 0;
   ratio = 0;
 
-  constructor(private http: HttpClient) {}
+  constructor(private courseService: CourseService) {}
 
   ngOnInit() {
-    this.http.get<Course[]>(`${environment.baseUrl}/courses`).subscribe(courses => {
+    this.courseService.getApprovedCourses().subscribe(courses => {
       this.courses = courses;
     });
   }
@@ -99,12 +100,14 @@ export class VideoPlayerComponent implements OnInit {
   }
 
   vote(type: string) {
-    let key = type === 'up' ? VOTE_UP : VOTE_DOWN;
-    key = `${key}@${this.currentCourse.id}`;
-    const current = this._getItem(key, 0);
-    localStorage.setItem(key, current + 1);
+    if (this.currentCourse) {
+      let key = type === 'up' ? VOTE_UP : VOTE_DOWN;
+      key = `${key}@${this.currentCourse.id}`;
+      const current = this._getItem(key, 0);
+      localStorage.setItem(key, current + 1);
 
-    this._displayVoteInfo();
+      this._displayVoteInfo();
+    }
   }
 
   // playlist's events

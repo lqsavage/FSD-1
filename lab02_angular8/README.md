@@ -3,10 +3,17 @@
 ### Tech stack
 
 1. Angular 8.1
+2. Routing
+3. NgBootstrap/Bootstrap 4.3
+4. Reactive Forms
+5. Http Interceptors
+6. Ngx Toast
+
+### Project Structure
+
+TODO
 
 ### Setup
-
-http://localhost:4200
 
 ```sh
 git clone https://github.com/uniquejava/FSD.git
@@ -55,3 +62,9 @@ angular files
 保存时自动 fix tslint 错误， 需要安装 Prettier - Code Formatter 插件， `ext install esbenp.prettier-vscode`
 
 ### References
+
+1. https://github.com/gothinkster/angular-realworld-example-app
+2. https://angular.io/guide/styleguide
+3. https://ng-bootstrap.github.io/#/components/modal/examples
+4. [Angular Forms Tutorial (youtube)](https://www.youtube.com/playlist?list=PLC3y8-rFHvwhwL-XH04cHOpJnkgRKykFi)
+5. [Color Scheme Designer (Chinese)](http://www.peise.net/tools/web/#)
