@@ -2,28 +2,34 @@
 
 Try different tech stacks to build a html media player.
 
-![player screenshot](./lab01_html5_bootstrap4/player.png)
-
-![angular8 screenshot](./lab02_angular8/fsd_angular8_screen.png)
-
 Source code: https://github.com/uniquejava/FSD
+
+![login screenshot](./lab05_spring5mvc_sec_jdbc/login.jpg)
+
+![player screenshot](./lab01_html5_bootstrap4/player.png)
 
 ## Environment
 
-1. macOS 10.14.x
-2. VS Code
-3. Intellij IDEA Community
+1. macOS 10.14.6
+2. Visual Studio Code 1.36.1 (prettier)
+3. Intellij IDEA Community 2019
+4. Spring Tool Suite 4 (editorconfig)
+5. Test with Google Chrome
 
-## Different Editions
+## Required assignments
 
-1. [x] html5/css3/es6
-2. [x] angular8
-3. [ ] react16
-4. [ ] vue2
-5. [ ] spring boot
+1. [x] html5/css3/es6 (html5 media player)
+2. [x] angular8 (html5 media player)
+3. [x] react16 (html5 media player)
+4. [x] java8 (salary predictor)
+5. [x] spring mvc (2019/8/19)
+6. [ ] spring boot (2019/9/2)
+7. [ ] database design (2019/9/23)
+8. [ ] maven/git/junit (2019/10/14)
+9. [ ] CI/CD: jenkins & docker (2019/10/21)
 
-## Other stacks(Bonus)
+## Real world
 
-1. player vue edition
-2. player flutter edition
-3. backend node.js edition
+101. [ ] spring boot + spring security + jwt + vue.js + ant-design
+102. [ ] node.js + jwt + mongodb + vue.js + element-ui
+103. [ ] spring boot rest api | swagger | jwt | react.js | ant-design
